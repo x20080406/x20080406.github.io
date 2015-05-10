@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 关于我
+title: About Me
 description: About Me page of Abdel Raoof
 theme: purple
 ---
@@ -16,7 +16,7 @@ OK，言归正传。网站使用python编写，现学现卖，代码不忍直视
 * 学习
 * 生活
 
-“小店”开张得意于很多朋友的帮助！最重要的是[ax003d](http://wpblog.sinaapp.com "ax003d space")！最最最重要还是__xbd__。其他的就不细数了，你们的好都记在心头叻！
+“小店”开张得意于很多朋友的帮助！最重要的是[ax003d](http://wpblog.sinaapp.com "ax003d space")！最最最重要还是*xbd*。其他的就不细数了，你们的好都记在心头叻！
 
 #####规划#####
 将为本站添加留言功能、__markdown原文下载__及代码开放，手机（android）版本...有好想法可能都会加上去。
