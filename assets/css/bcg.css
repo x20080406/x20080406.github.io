@@ -104,6 +104,13 @@
 	background-position: center;
 	background-repeat: no-repeat;
 }
+.icon-sto {
+	background-image: url('/assets/images/sto_ico.png');
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+
 .icon-blog {
 	background-image: url('/assets/images/icon-blog.png');
 	background-position: center;
