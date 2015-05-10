@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  test
+title:  先序遍历二叉树（非递归算法）
 date:   2014-03-24 02:16:21
 tags:
 - java 
 ---
 
-###�㷨˼·###
-_ʹ��ջ�������Ѿ����ʹ��ĸ��ڵ㣬Ϊ������ýڵ��������֮���ٷ�������������׼������ʼʱջΪ�գ��ÿ�����ָ��������ĸ��ڵ㡣���ţ���ָ����ڵ�����÷ǿջ���ջ�ǿգ������ѭ����ɲ�����_
+###算法思路###
+_使用栈来保存已经访问过的根节点，为访问完该节点的左子树之后再访问其右子树做准备。开始时栈为空，用空引用指向二叉树的跟节点。接着，若指向根节点的引用非空或者栈非空，则继续循环完成操作。_
 
-####��###
+####树###
 ```
         a
       /   \
@@ -20,7 +20,7 @@ _ʹ��ջ�������Ѿ����ʹ��ĸ��ڵ㣬Ϊ������ýڵ��������֮���ٷ�������������׼���
  g              i
 ```
 
-###Node�ڵ㼰��ʼ��������###
+###Node节点及初始化树代码###
 ```
 package personal.tianjie.datastruct;
 
@@ -77,7 +77,7 @@ public class Node {
 }
 ```
 
-###�㷨###
+###算法###
 ```
 import java.util.Stack;
 
@@ -86,7 +86,7 @@ public class BinTreeTestCase {
 		Stack<Node> s = new Stack<>();
 		Node node = Node.genBinTree();
 
-		// �������
+		// 先序遍历
 		while (node != null || !s.empty()) {
 			if (node != null) {
 				System.out.println(node.getNodeName());
