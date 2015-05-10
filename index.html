@@ -13,18 +13,26 @@ description: Home Page for TheBlog
 	</header>
 	<nav>
 		<div class="row" style="margin-top:25px">
- 			<div class="col-md-2 col-sm-3 col-xs-6">
-				<a href="about/">
-					<div class="tile purple profile bord">
-						<h2 class="title">About Me</h2>
-						<p>Hello World, I am {{site.author}}.</p>
+			<div class="col-md-2 col-sm-3 col-xs-6">
+				<div class="live-tile" data-mode="flip" data-delay="4000">
+					<div>
+						<a href="/about">
+							<div class="tile purple profile bord">
+								<h2 class="title">About Me</h2>
+								<p>Hello, I am {{site.author}}.</p>
+							</div>
+						</a>
 					</div>
-				</a>
-				<a href="blog/" title="About Me" class="tile purple profile bord icon-about"></a>
-		    </div>
+					<div>
+						<a href="/about" title="About" class="tile purple bord icon-about"></a>
+					</div>
+				</div>
+			</div>
+
 			<!--div class="col-md-2 col-sm-3 col-xs-6">
 				<a href="resume/" title="Resume" class="tile red bord icon-resume"></a>
 			</div-->
+
 			<div class="col-md-2 col-sm-3 col-xs-6">
 				<div class="live-tile" data-mode="flip" data-delay="4000">
 					<div>
