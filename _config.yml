@@ -7,10 +7,10 @@ highlighter: pygments
 permalink:        /blog/:year/:month/:day/:title
 
 # Setup
-title:            'Jekyll Metro'
+title:            'TheBlog'
 tagline:          'A Metro theme for Jekyll'
-description:      'A Sample blog using Jekyll Metro'
-url:              'http://x20080406.github.io'
+description:      '随手记'
+url:              '//x20080406.github.io'
 baseurl:          ''
 
 # Navigation
