@@ -22,8 +22,7 @@ _使用栈来保存已经访问过的根节点，为访问完该节点的左子�
 
 ###Node节点及初始化树代码###
 
-```
-
+```java
 package personal.tianjie.datastruct;
 
 public class Node {
@@ -77,7 +76,6 @@ public class Node {
 	}
 
 }
-
 ```
 
 ###算法###
