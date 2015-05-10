@@ -7,7 +7,6 @@ tags:
 - netty
 ---
 
-<h2 id="netty40xchanneloutboundhandlerchannelinboundhandler">从源码分析为什么Netty4.0.x的ChannelOutboundHandler需要放在ChannelInboundHandler之前？</h2>
 <h4 id="">起因</h4>
 <p>最近学习netty，在理解channel执行顺序的时候写了一个例子。可发现ChannelOutboundHandler死活无法调用。看了很多资料都说它的执行顺序像Servlet，如果真把它按servlet去理解，那就上当了！</p>
 <h4 id="_1">资料</h4>
