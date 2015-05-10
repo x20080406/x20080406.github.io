@@ -78,7 +78,7 @@ description: Home Page for TheBlog
 						<div class="tile orange bord">
 							<h3 class="title">Featured Article</h3>
 							<h4 class="title">{{ post.title }}</h4>
-							<p> {{ post.content | strip_html | truncatewords: 10 }}</p>
+							<p> {{ post.content | strip_html | truncate: 45  }}</p>
 						</div>
 					</a>
 					{% break %}
