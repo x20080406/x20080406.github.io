@@ -1,8 +1,7 @@
 # Configurations
-#pygments:true
-markdown: kramdown
+markdown: redcarpet2
 markdown_ext:  markdown,mkdown,mkdn,mkd,md
-#highlighter: pygments
+highlighter: pygments
 
 # Permalinks
 permalink:        /blog/:year/:month/:day/:title
