@@ -99,7 +99,11 @@
 	background-position: center;
 	background-repeat: no-repeat;
 }
-
+.icon-about {
+	background-image: url('/assets/images/about-icon.png');
+	background-position: center;
+	background-repeat: no-repeat;
+}
 .icon-blog {
 	background-image: url('/assets/images/icon-blog.png');
 	background-position: center;
