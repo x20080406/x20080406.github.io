@@ -52,7 +52,7 @@ description: Home Page for TheBlog
 				<a href="{{post.url}}">
 					<div class="tile green bord">
 						<h3 class="title">Recent Article</h3>
-						<h4 class="title">{{ post.title }}</h4>
+						<h4 class="title">{{ post.title | strip_html |  truncate: 20  }}</h4>
 						<p> {{ post.content | strip_html |  truncate: 35  }}</p>
 					</div>
 				</a>
@@ -64,7 +64,7 @@ description: Home Page for TheBlog
 				<a href="{{post.url}}">
 					<div class="tile red bord">
 						<h3 class="title">Latest Article</h3>
-						<h4 class="title">{{ post.title }}</h4>
+						<h4 class="title">{{ post.title | strip_html |  truncate: 20 }}</h4>
 						<p> {{ post.content | strip_html |  truncate: 35 }}</p>
 					</div>
 				</a>
@@ -77,7 +77,7 @@ description: Home Page for TheBlog
 					<a href="{{post.url}}">
 						<div class="tile orange bord">
 							<h3 class="title">Featured Article</h3>
-							<h4 class="title">{{ post.title }}</h4>
+							<h4 class="title">{{ post.title | strip_html |  truncate: 20 }}</h4>
 							<p> {{ post.content | strip_html | truncate: 40  }}</p>
 						</div>
 					</a>
