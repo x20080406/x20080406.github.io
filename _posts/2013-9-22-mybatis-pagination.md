@@ -138,4 +138,4 @@ tags:
     }
 </code></pre>
 
-<p>另外：在Spring中配置一个SqlSessionTemplate，在系统卸载SqlSessionTemplate时有异常产生，不用管，sqlsessiontemplate不支持这些操作。原因(这里)[http://lizhizhang.iteye.com/blog/1917807]。</p>
+<p>另外：在Spring中配置一个SqlSessionTemplate，在系统卸载SqlSessionTemplate时有异常产生，不用管，sqlsessiontemplate不支持这些操作。原因<a href="http://lizhizhang.iteye.com/blog/1917807">这里</a>。</p>
