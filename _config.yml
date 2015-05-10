@@ -57,7 +57,7 @@ footer-links:
   stackoverflow: #users/4388898/peter-zhu # your stackoverflow profile, e.g. "users/50476/bart-kiers"
 
 # Disqus
-disqushandler: '	'
+disqushandler: 'shuaia'
 
 # Blog Configurations
 paginate: 10 # Posts per page on the blog index
