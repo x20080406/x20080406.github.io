@@ -1,16 +1,13 @@
 # Configurations
-
-markdown: maruku
+markdown: kramdown
 markdown_ext:  markdown,mkdown,mkdn,mkd,md
-highlighter: pygments
+#highlighter: pygments
 
-maruku:
-  use_tex:    false
-  use_divs:   false
-  png_engine: blahtex
 # Permalinks
 permalink:        /blog/:year/:month/:day/:title
 
+kramdown:
+  auto_ids: true
 # Setup
 title:            'TheBlog'
 tagline:          'A Metro theme for Jekyll'
