@@ -9,6 +9,12 @@ tags:
 ###算法思路###
 _使用栈来保存已经访问过的根节点，为访问完该节点的左子树之后再访问其右子树做准备。开始时栈为空，用空引用指向二叉树的跟节点。接着，若指向根节点的引用非空或者栈非空，则继续循环完成操作。_
 
+```
+function test() {
+  console.log("notice the blank line before this function?");
+}
+```
+
 ####树###
 ```java
 			a
