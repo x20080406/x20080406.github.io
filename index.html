@@ -30,16 +30,7 @@ description: Home Page for TheBlog
 						<a href="blog/" title="Blog" class="tile orange bord icon-blog"></a>
 					</div>
 					<div>
-						<a href="blog/" title="Blog" class="tile orange bord font-fix">
-						<p>博客</p>
-							<ol>
-								{% for post in site.posts offset:1 limit:1 %}
-								<li>
-									{{ post.title | strip_html | truncate: 5 }}
-								</li>
-								{% endfor %}
-							</ol>
-						</a>
+						<a href="blog/" title="Blog" class="tile orange bord font-fix"></a>
 					</div>
 				</div>
 			</div>
