@@ -105,13 +105,22 @@
 	background-position: center;
 	background-repeat: no-repeat;
 }
+.icon-blog1 {
+	background-image: url('/assets/images/icon-resume.png');
+	background-position: center;
+	background-repeat: no-repeat;
+}
 
 .icon-blog-small {
 	background-image: url('/assets/images/icon-blog-small.png');
 	background-position: center;
 	background-repeat: no-repeat;
 }
-
+.icon-blog1-small {
+	background-image: url('/assets/images/icon-resume-small.png');
+	background-position: center;
+	background-repeat: no-repeat;
+}
 .rep-1 {
     margin-top: -9%;
     padding-left: 0;
