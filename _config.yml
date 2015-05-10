@@ -17,8 +17,8 @@ baseurl:          ''
 navigation:
 - text: About
   url: /about/
-- text: Resume
-  url: /resume/
+#- text: Resume
+#  url: /resume/
 - text: Blog
   url: /blog/
 - text: Tags
@@ -57,7 +57,7 @@ footer-links:
   stackoverflow: #users/4388898/peter-zhu # your stackoverflow profile, e.g. "users/50476/bart-kiers"
 
 # Disqus
-disqushandler: 'shuaia'
+disqushandler: '	'
 
 # Blog Configurations
 paginate: 10 # Posts per page on the blog index
