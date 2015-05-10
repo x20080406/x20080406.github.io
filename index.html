@@ -35,7 +35,7 @@ description: Home Page for TheBlog
 							<ol>
 								{% for post in site.posts offset:1 limit:1 %}
 								<li>
-									{{ post.title | strip_html | truncatewords: 5 }}
+									{{ post.title | strip_html | truncate: 5 }}
 								</li>
 								{% endfor %}
 							</ol>
@@ -53,7 +53,7 @@ description: Home Page for TheBlog
 					<div class="tile green bord">
 						<h3 class="title">Recent Article</h3>
 						<h4 class="title">{{ post.title }}</h4>
-						<p> {{ post.content | strip_html |  truncate: 45  }}</p>
+						<p> {{ post.content | strip_html |  truncate: 40  }}</p>
 					</div>
 				</a>
 				{% endfor %}
@@ -65,7 +65,7 @@ description: Home Page for TheBlog
 					<div class="tile red bord">
 						<h3 class="title">Latest Article</h3>
 						<h4 class="title">{{ post.title }}</h4>
-						<p> {{ post.content | strip_html |  truncate: 45 }}</p>
+						<p> {{ post.content | strip_html |  truncate: 40 }}</p>
 					</div>
 				</a>
 				{% endfor %}
@@ -78,7 +78,7 @@ description: Home Page for TheBlog
 						<div class="tile orange bord">
 							<h3 class="title">Featured Article</h3>
 							<h4 class="title">{{ post.title }}</h4>
-							<p> {{ post.content | strip_html | truncate: 45  }}</p>
+							<p> {{ post.content | strip_html | truncate: 40  }}</p>
 						</div>
 					</a>
 					{% break %}
