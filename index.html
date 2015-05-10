@@ -28,11 +28,20 @@ description: Home Page for Jekyll Metro Theme
 				<div class="live-tile" data-mode="flip" data-delay="4000">
 					<div>
 						<a href="blog/" title="Blog" class="tile orange bord icon-blog"></a>
-						<p>Blog</p>
 					</div>
 					<div>
 						<a href="blog/" title="Blog" class="tile orange bord font-fix">
 						<p>博客</p>
+							<ol>
+								{% for post in site.posts offset:2 limit:2 %}
+								<li>
+								<a href="{{post.url}}">
+									{{ post.title }}
+								</a>
+								<li>
+								{% endfor %}
+								
+							</ol>
 						</a>
 					</div>
 				</div>
