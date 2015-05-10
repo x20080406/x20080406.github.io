@@ -10,7 +10,7 @@ kramdown:
   auto_ids: true
 # Setup
 title:            'TheBlog'
-tagline:          'A Metro theme for Jekyll'
+tagline:          'TheBlog'
 description:      '随手记'
 url:              '//x20080406.github.io'
 baseurl:          ''
