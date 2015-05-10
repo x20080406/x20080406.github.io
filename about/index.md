@@ -4,31 +4,30 @@ title: 关于我
 description: About Me page of Abdel Raoof
 theme: purple
 ---
+“新店”开张，欢迎光临！
 
-I am a web focused developer mostly working using Microsoft .Net technologies. Occasionally, I end up working on non web related projects. I am based in Abu Dhabi, United Arab Emirates and work for C4 Advanced Solution as Application Developer.
-This is my personal website and blog where I put down my thoughts, solutions to problems and learning notes.
+小弟本是一个对生活抱有憧憬的热血屌丝，阴差阳错进入了这个行业。为生活所迫，沦为一枚和大家一样的小码农：（   呵呵！开个玩笑：）缓解下心情！
 
-## Stack Overflow
+OK，言归正传。网站使用python编写，现学现卖，代码不忍直视！主要是sae的java环境太贵了！本站不含图，图片存储到[photobucket.com](http://photobucket.com)，js，css大多都仍[googlecode](http://code.google.com)。本站所用的框架很多，主要包括flask，sqlalchemy，jinja2，bootstrap,前端选用的是HTML5框架octopress。内容使用markdown格式文本。支持代码高亮显示。支持用memcached来缓存数据（sae的memcached好贵，开通服务就要收豆哦，访问量不大还是不开了），没事不要乱刷啊。呵呵。本站其实去年开发过一个nodejs版并部署到cloudfoundry上，可惜cloudfoundry不让免费玩了,于是作罢！
 
-Stackoverflow is a online community I hang around a lot during my free time. You can find me answering questions on Sencha's Ext Js , C# and Java. Here is my flair:
+本站记录主要用于记录自己的“[流水账](http://appfuse.sinaapp.com)”。大致包括以下几部分
 
-<a href="http://stackexchange.com/users/62487">
-<img src="http://stackexchange.com/users/flair/62487.png?theme=clean" width="208" height="58" alt="profile for Abdel Olakara on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Abdel Olakara on Stack Exchange, a network of free, community-driven Q&amp;A sites">
-</a>
+* 工作
+* 学习
+* 生活
+
+“小店”开张得意于很多朋友的帮助！最重要的是[ax003d](http://wpblog.sinaapp.com "ax003d space")！最最最重要还是__xbd__。其他的就不细数了，你们的好都记在心头叻！
+
+#####规划#####
+将为本站添加留言功能、__markdown原文下载__及代码开放，手机（android）版本...有好想法可能都会加上去。
+
+好了，写完了，脚也洗完了：）...“豆写到这点唠！”
+
+[本站代码地址](https://github.com/x20080406/theblog)
 
 
-## About this Site
-
-This is a static site powered by Jekyll. The design was done by me and the theme is freely available on [Github](https://github.com/olakara/JekyllMetro). I have used Bootstrap, jQuery, icons from Metro Studio of Syncfusion and Github for hosting the site.
-
-Technicals apart, this is my personal site where I plan to pen down my thoughts, technical experiences that I would like to share. But, the content and opnion that you see here are personal and not related to companies / clients i work with. And regarding the code you see there.. you may use it as per your discretion.
-
-## About this Theme
-
-Jekyll Metro is the result of wanting a clean and new theme for my personal site. I was initially inspired by the [Hyde theme](https://github.com/poole/hyde). but soon I was googling to see if there are any Metro inspired theme available.
-Since, I couldn't find one, I decided to built one for myself. One of the main goal of building my own theme was to have a modern responsive theme that looks good on mobile, tablet and desktop.
-
-You are free to use or fork this theme. And any contribution to fixes of issues are welcome.
+来一张纯手工制作的图片。试试
+![猪啊，呵呵](http://i63.photobucket.com/albums/h134/x20080406/672A547D540D_zps68b3aae2.jpg)
 
 ## Contact Me
 
