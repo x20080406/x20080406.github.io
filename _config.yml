@@ -1,9 +1,13 @@
 # Configurations
 
-markdown: kramdown
+markdown: maruku
 markdown_ext:  markdown,mkdown,mkdn,mkd,md
 highlighter: pygments
 
+maruku:
+  use_tex:    false
+  use_divs:   false
+  png_engine: blahtex
 # Permalinks
 permalink:        /blog/:year/:month/:day/:title
 
