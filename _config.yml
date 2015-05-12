@@ -60,6 +60,7 @@ footer-links:
 
 # Disqus
 disqushandler: 'shuaia'
+dshandler:'x20080406'
 
 # Blog Configurations
 paginate: 10 # Posts per page on the blog index
