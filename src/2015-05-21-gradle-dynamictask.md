@@ -1,19 +1,19 @@
 ---
 layout: post
-title:  ÀûÓÃGradleµÄDynamicTaskÀ´ÊÊÓ¦¸÷ÖÖÅäÖÃ²ÎÊı
+title:  åˆ©ç”¨Gradleçš„DynamicTaskæ¥é€‚åº”å„ç§é…ç½®å‚æ•°
 date:   2015-05-21 23:40:30
 tags:
 - gradle
 ---
 
-ÎÒÃÇÍ¨³£ÊÇ½«ÅäÖÃ²ÎÊıĞ´Èëµ½ºÜ¶àÊôĞÔÎÄ¼şÀï£¬È»ºóÊ¹ÓÃspringÌá¹©µÄÕ¼Î»·ûµÈ¹¤¾ßÀàÀ´¼ÓÔØ¡£GradleÖĞÖ§³Ö(¶¯Ì¬task)[https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#N1029F]£¬¿ÉÒÔÀûÓÃgradleÔÚ±àÒëÊ±Ö±½Ó½«ÊôĞÔÎÄ¼şÀïµÄÄÚÈİÌæ»»µ½ÅäÖÃÎÄ¼şÀï¡£ÕâÒ²ÊÇgradleµÄÇ¿´óÖ®´¦£¬ÔÚbuild.gradleÖĞĞ´groovy½Å±¾¡£
-ÎÒµÄÅäÖÃÎÄ¼ş¡£
+æˆ‘ä»¬é€šå¸¸æ˜¯å°†é…ç½®å‚æ•°å†™å…¥åˆ°å¾ˆå¤šå±æ€§æ–‡ä»¶é‡Œï¼Œç„¶åä½¿ç”¨springæä¾›çš„å ä½ç¬¦ç­‰å·¥å…·ç±»æ¥åŠ è½½ã€‚Gradleä¸­æ”¯æŒ(åŠ¨æ€task)[https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#N1029F]ï¼Œå¯ä»¥åˆ©ç”¨gradleåœ¨ç¼–è¯‘æ—¶ç›´æ¥å°†å±æ€§æ–‡ä»¶é‡Œçš„å†…å®¹æ›¿æ¢åˆ°é…ç½®æ–‡ä»¶é‡Œã€‚è¿™ä¹Ÿæ˜¯gradleçš„å¼ºå¤§ä¹‹å¤„ï¼Œåœ¨build.gradleä¸­å†™groovyè„šæœ¬ã€‚
+æˆ‘çš„é…ç½®æ–‡ä»¶ã€‚
 
-####build.gradleÖĞµÄ²¿·Ö´úÂë
+####build.gradleä¸­çš„éƒ¨åˆ†ä»£ç 
 ```groovy
-def envs=['proc','test'] //¶¨Òå»·¾³
+def envs=['proc','test'] //å®šä¹‰ç¯å¢ƒ
 
-//¶¨Òåtask
+//å®šä¹‰task
 envs.each{ env ->
 	task "build_${env}" (dependsOn:build) << {
 		copy{
@@ -37,11 +37,11 @@ key1=procval
 ```
 key1=testval
 ```
-####springÅäÖÃÎÄ¼ş
+####springé…ç½®æ–‡ä»¶
 ```xml
 <bean id="mybean1" class="com.test.MyClass1" >
     <property name="myprop1" value="@key1@" />
 </bean>
 ```
 
-×îºóÔÚÏîÄ¿ÖĞÖ´ĞĞ**gradle build_proc**»òÕß**gradle build_test**
+æœ€ååœ¨é¡¹ç›®ä¸­æ‰§è¡Œ**gradle build_proc**æˆ–è€…**gradle build_test**
