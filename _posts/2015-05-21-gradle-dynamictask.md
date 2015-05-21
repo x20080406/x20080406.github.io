@@ -5,7 +5,7 @@ date:   2015-05-21 23:40:30
 tags:
 - gradle
 ---
-<p>我们通常是将配置参数写入到很多属性文件里，然后使用spring提供的占位符等工具类来加载。Gradle中支持<a href="https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#N1029F">动态task</a>，可以利用gradle在编译时直接将属性文件里的内容替换到配置文件里。这也是gradle的强大之处，在build.gradle中写groovy脚本。以下是我的配置文件。</p>
+<p>我们通常是将配置参数写入到很多属性文件里，然后使用spring提供的占位符等工具类来加载。Gradle中支持<a href="https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#N1029F">动态task</a>，结合<a href="https://docs.gradle.org/current/userguide/working_with_files.html#filterOnCopy">filter</a>可以利用gradle在编译时直接将属性文件里的内容替换到配置文件里。这也是gradle的强大之处，在build.gradle中写groovy脚本。以下是我的配置文件。</p>
 <h4 id="buildgradle">build.gradle中的部分代码</h4>
 <pre><code class="groovy">def envs=['proc','test'] //定义环境
 
