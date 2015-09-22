@@ -6,33 +6,25 @@ tags:
 - java 
 ---
 
-<p>java中的引用总共分为4种，在java.lang.ref包下可以找到5种：</p>
 <ol>
+<p>java中的引用总共分为4种，在java.lang.ref包下可以找到5种：</p>
 <li>强引用。默认就是它。只要引用还存在，任何时候发生GC都不会被回收，即便发生OOM</li>
-</ol>
 <pre><code>Obj obj1 = new Obj();
 </code></pre>
 
-<ol>
 <li>软引用。在内存不足时被回收。</li>
-</ol>
 <pre><code>SoftReference&lt;Obj&gt; obj2 = new SoftReference(new Obj(&quot;soft&quot;));
 </code></pre>
 
-<ol>
 <li>弱引用。GC发生时就被回收。</li>
-</ol>
 <pre><code>WeakReference&lt;Obj&gt; obj3 = new WeakReference(new Obj(&quot;weak&quot;));
 </code></pre>
 
-<ol>
 <li>虚引用。创建之后就无法访问（不一定被回收了）。遇到GC就被回收。</li>
-</ol>
 <pre><code>ReferenceQueue&lt;Obj&gt; referenceQueue = new ReferenceQueue();
 PhantomReference&lt;Obj&gt; obj4 = new PhantomReference(new Obj(&quot;phantom&quot;), referenceQueue);
 </code></pre>
 
-<ol>
 <li>FinalReference。这个类用户程序用不到，由虚拟机使用。java没有析构函数，但有个finalize方法。所有对象构造/克隆或是初始化过程中（有参数可以设置不在构造时注册）都会注册到Finalizer里，这些Finalizer会组成一个链。由一个特殊的FinalizerThread进行调用finalize方法。一旦finalize被调用意味着他的‘死期’将不远了</li>
 </ol>
 <pre><code>import java.lang.ref.Reference;
