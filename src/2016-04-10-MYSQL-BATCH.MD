@@ -1,11 +1,12 @@
 ---
 layout: post
-title:  mysql batch operation support
+title:  mysql的batch操作支持
 date:   2016-04-10 13:27:11
 tags:
 - java
 - database
 ---
+
 # 问题
 mysql执行20000条数据插入，时间耗掉约70秒。使用的是预编译执行。
 

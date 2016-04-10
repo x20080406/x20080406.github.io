@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  mysql batch operation support
+title:  mysql的batch操作支持
 date:   2016-04-10 13:27:11
 tags:
 - java
