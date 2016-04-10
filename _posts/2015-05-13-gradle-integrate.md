@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  将maven项目整合到Gradle中
+title:  将maven项目迁移到Gradle
 date:   2015-05-13 15:33:25
 tags:
 - java
