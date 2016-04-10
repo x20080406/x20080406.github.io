@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  mysql的batch操作支持
-date:   2016-04-10 13:27:11
+title: mysql的batch操作支持
+date: 2016-04-10 13:27:11
 tags:
- - java
- - database
+- java
+- database
 ---
 
 <h1>问题</h1>
