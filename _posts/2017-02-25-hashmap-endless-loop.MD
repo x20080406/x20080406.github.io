@@ -14,13 +14,13 @@ tags:
 
 <p>通过top查看到进程中的线程，有10条线程处于100%cpu消耗状态，而且没有丝毫降低迹象。</p>
 
-<p>```
+<pre><code class="java">
 Tasks: 976 total,  11 running, 965 sleeping,   0 stopped,   0 zombie 
 Cpu(s): 45.1%us,  0.4%sy,  0.0%ni, 54.5%id,  0.0%wa,  0.0%hi,  0.0%si,  0.0%st
 Mem:  32957896k total, 31594400k used,  1363496k free,    36024k buffers
-Swap: 33554428k total,  1154544k used, 32399884k free, 15165192k cached</p>
+Swap: 33554428k total,  1154544k used, 32399884k free, 15165192k cached
 
-<p>PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND
+PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND
 100674 apps      20   0 22.2g 9.3g  10m R 100.2 29.6 749:09.60 java
 100675 apps      20   0 22.2g 9.3g  10m R 100.2 29.6 748:47.30 java
 101117 apps      20   0 22.2g 9.3g  10m R 100.2 29.6 748:43.89 java
@@ -52,18 +52,18 @@ Swap: 33554428k total,  1154544k used, 32399884k free, 15165192k cached</p>
  99087 apps      20   0 22.2g 9.3g  10m S  0.3 29.6   0:43.12 java
  99089 apps      20   0 22.2g 9.3g  10m S  0.3 29.6   0:43.15 java
  99091 apps      20   0 22.2g 9.3g  10m S  0.3 29.6   0:43.16 java
-```</p>
+</code></pre>
 
 <p>接下来通过jstack获取到的线程信息发现，发现这10条线程全是参与自检的10个线程，他们都处于同一行代码，而且线程状态是running，很有可能死循环了。</p>
 
-<p><code>
+<pre><code>
 at java.util.HashMap.put(HashMap.java:391)
 at java.util.HashSet.add(HashSet.java:217)
-</code></p>
+</code></pre>
 
 <p>打开jdk中src.zip里java.util.HashMap.java的391行代码一看，果然是个循环，为什么会死循环呢？</p>
 
-<p><code>
+<pre><code class="java">
 public V put(K key, V value) {
     if (key == null)
         return putForNullKey(value);
@@ -82,4 +82,4 @@ public V put(K key, V value) {
     addEntry(hash, key, value, i);
     return null;
 }
-</code></p>
+</code><pre>
