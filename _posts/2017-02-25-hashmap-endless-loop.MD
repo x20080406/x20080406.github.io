@@ -6,11 +6,11 @@ tags:
 - java
 ---
 
-<h1>问题</h1>
+<h3>问题</h1>
 
 <p>发版本后以前每天正常工作的自检程序，突然不灵了。</p>
 
-<h1>分析过程</h1>
+<h3>分析过程</h1>
 
 <p>通过top查看到进程中的线程，有10条线程处于100%cpu消耗状态，而且没有丝毫降低迹象。</p>
 
@@ -52,14 +52,17 @@ PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND
  99087 apps      20   0 22.2g 9.3g  10m S  0.3 29.6   0:43.12 java
  99089 apps      20   0 22.2g 9.3g  10m S  0.3 29.6   0:43.15 java
  99091 apps      20   0 22.2g 9.3g  10m S  0.3 29.6   0:43.16 java
-</code></pre>
+</code>
+</pre>
 
 <p>接下来通过jstack获取到的线程信息发现，发现这10条线程全是参与自检的10个线程，他们都处于同一行代码，而且线程状态是running，很有可能死循环了。</p>
 
-<pre><code>
+<pre>
+    <code>
 at java.util.HashMap.put(HashMap.java:391)
 at java.util.HashSet.add(HashSet.java:217)
-</code></pre>
+</code>
+</pre>
 
 <p>打开jdk中src.zip里java.util.HashMap.java的391行代码一看，果然是个循环，为什么会死循环呢？</p>
 
@@ -82,4 +85,5 @@ public V put(K key, V value) {
     addEntry(hash, key, value, i);
     return null;
 }
-</code><pre>
+</code>
+</pre>
