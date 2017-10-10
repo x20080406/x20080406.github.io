@@ -64,7 +64,7 @@ at java.util.HashSet.add(HashSet.java:217)
 </code>
 </pre>
 
-<p>打开jdk中src.zip里java.util.HashMap.java的391行代码一看，果然是个循环，为什么会死循环呢？</p>
+<p>打开jdk中src.zip里java.util.HashMap.java的391行代码一看，果然是个循环，为什么会死循环呢？答案在<a href="https://coolshell.cn/articles/9606.html" target="_blank">这</a></p>
 
 <pre><code class="java">
 public V put(K key, V value) {
