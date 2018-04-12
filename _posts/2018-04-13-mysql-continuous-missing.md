@@ -36,6 +36,7 @@ tags:
 
 </code></pre>
 <p>法2，经典求范围连续/范围缺失问题的sql</p>
+<p>如果没有少数据，则id减行号为0。每断几条，则id减行号的数量会增大几个。通过这个特性将连续的数据通过（id-行号）组织在一起。最后通过id-行号作为分组进行最后的统计，然后关联一把就得到要的数据。</p>
 <pre><code class="language-sql"><span class="hljs-operator"><span class="hljs-keyword">select</span> <span class="hljs-keyword">m</span>.cq,<span class="hljs-keyword">f</span>.bq,<span class="hljs-keyword">m</span>.<span class="hljs-keyword">id</span>, <span class="hljs-keyword">m</span>.<span class="hljs-built_in">date</span>, <span class="hljs-keyword">m</span>.people <span class="hljs-keyword">from</span> (
     <span class="hljs-keyword">select</span> @rw:=<span class="hljs-keyword">ifnull</span>(@rw,<span class="hljs-number">0</span>)+<span class="hljs-number">1</span> <span class="hljs-keyword">as</span> rw, <span class="hljs-keyword">id</span>-@rw <span class="hljs-keyword">as</span> cq, <span class="hljs-keyword">id</span>, <span class="hljs-built_in">date</span>, people <span class="hljs-keyword">from</span>  stadium a ,(<span class="hljs-keyword">select</span> @rw:=<span class="hljs-number">0</span>) b <span class="hljs-keyword">where</span> a.people &gt; <span class="hljs-number">100</span>
 ) <span class="hljs-keyword">m</span>, (
