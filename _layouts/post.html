@@ -26,7 +26,7 @@ layout: master
         <br/><br/>
         <h4>Comments:</h4>
           <div class="ds-thread" {% if page.id %}data-thread-key="{{ page.id }}"{% endif %} data-title="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}"></div>
-          <script type="text/javascript">
+          <!--script type="text/javascript">
           var duoshuoQuery = {short_name:"{{site.dshandler}}"};
             (function() {
               var ds = document.createElement('script');
@@ -36,6 +36,22 @@ layout: master
               (document.getElementsByTagName('head')[0] 
                || document.getElementsByTagName('body')[0]).appendChild(ds);
             })();
+            </script-->
+
+            <div id="container"></div>
+            <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+            <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+            <script>
+            var gitment = new Gitment({
+              id: "{{page.id}}", // 可选。默认为 location.href
+              owner: '{{site.gitOwner}}',
+              repo: '{{site.gitRepo}}',
+              oauth: {
+                client_id: '{{site.gitClientId}}',
+                client_secret: '{{site.gitClientSecret}}',
+              },
+            })
+            gitment.render('container')
             </script>
       </article> 
       
