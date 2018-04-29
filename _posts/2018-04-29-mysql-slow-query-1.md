@@ -121,5 +121,5 @@ ext.value_l_varchar <span class="hljs-keyword">as</span> attrValueLVarchar, ext.
 <h2><a id="straight_join_42"></a>straight_join</h2>
 <p>straight_join其实不是什么特别join，他会干扰mysql对表的连接顺序。强制join前的表作为驱动表（外循环）</p>
 <h2><a id="_45"></a>…</h2>
-<p>虽然mysql加入了nka、mrr、icp等。但其实并不能完全解决性能问题，特别是io的坑。建议不要在生产上使用join，尽量简化查询。<strong>根据简单的key来查不怕查多次，就怕慢查询。</strong></p>
+<p>虽然mysql加入了bka、mrr、icp等。但其实并不能完全解决性能问题，特别是io的坑。建议不要在生产上使用join，尽量简化查询。<strong>根据简单的key来查不怕查多次，就怕慢查询。</strong></p>
 <p>另外，随着业务的发展后续要想拆库，需要把原来用join方式联合查询的表分到两个不同的库，那就改动大了。随着微服务的兴起，这是很常见的事。</p>
