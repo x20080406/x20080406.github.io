@@ -42,6 +42,8 @@ select * from stadium s
 ```
 
 法2，经典求范围连续/范围缺失问题的sql
+
+如果没有少数据，则id减行号为0。每断几条，则id减行号的数量会增大几个。通过这个特性将连续的数据通过（id-行号）组织在一起。最后通过id-行号作为分组进行最后的统计，然后关联一把就得到要的数据。
 ```sql
 select m.cq,f.bq,m.id, m.date, m.people from (
 	select @rw:=ifnull(@rw,0)+1 as rw, id-@rw as cq, id, date, people from  stadium a ,(select @rw:=0) b where a.people > 100
