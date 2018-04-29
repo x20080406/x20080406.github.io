@@ -8,7 +8,7 @@ tags:
 
 
 <h1><a id="_0"></a>背景</h1>
-<p>线上一条sql按正常执行计划应该是毫秒级出结果都。突然成了慢查询。dba反馈此sql执行了3000秒还未返回结果。sql做了‘脱敏’。简单描述下：m_ext_value是存放数据表，它是一张达40亿行的大表，ext_attr是定义表，只有几百行记录。</p>
+<p>线上一条sql按正常执行计划应该是毫秒级出结果都。突然成了慢查询。dba反馈此sql执行了3000秒还未返回结果。sql做了‘脱敏’。简单描述下：m_ext_value是存放数据表，它是一张达40亿行的大表，ext_attr是定义表，只有几百行记录。通过这种方式，将原来按列存储的数据变成按行存储。</p>
 <pre><code class="language-sql"><span class="hljs-operator"><span class="hljs-keyword">select</span> ext.m_id <span class="hljs-keyword">as</span> <span class="hljs-keyword">mId</span>, <span class="hljs-keyword">attr</span>.<span class="hljs-keyword">id</span> <span class="hljs-keyword">as</span> attrId, <span class="hljs-keyword">attr</span>.code <span class="hljs-keyword">as</span> attrCode, <span class="hljs-keyword">attr</span>.data_type <span class="hljs-keyword">as</span> dataType,
 ext.value_datetime <span class="hljs-keyword">as</span> attrValueDatetime, ext.value_decimal <span class="hljs-keyword">as</span> attrValueDecimal, ext.value_int <span class="hljs-keyword">as</span> attrValueInt, 
 ext.value_l_varchar <span class="hljs-keyword">as</span> attrValueLVarchar, ext.value_s_varchar <span class="hljs-keyword">as</span> attrValueSVarchar <span class="hljs-keyword">from</span> m_ext_value ext
@@ -115,9 +115,9 @@ ext.value_l_varchar <span class="hljs-keyword">as</span> attrValueLVarchar, ext.
 <p>将<em>inner join</em>改为<em>stiraight_join</em>可避免此问题。让大表作为驱动表，强制其使用m_id列的索引（扫出来的结果集很小），然后对小表进行join。由谁做驱动表由查询的数据集决定的，<strong>谁的数据集小谁做驱动表</strong></p>
 <h1><a id="_36"></a>其他</h1>
 <h2><a id="_37"></a>设计</h2>
-<p>把列变成行这种做法非常不好。数据量急剧膨胀就悲剧来。我觉得还是建另一个表来存放好一点。开发友好，理解也简单，查问题方便。所以表设计时一定要注意。一定要对自己对业务表有一个比较准确的预估，以及扩展计划。</p>
+<p>把列变成行这种做法非常不好。数据量急剧膨胀无法控制，拆库都必须依赖主表。我觉得还是建另一个表来存放好一点。开发友好，理解也简单，查问题方便。所以表设计时一定要注意。一定要对自己对业务表有一个比较准确的预估，以及扩展计划。</p>
 <h2><a id="straight_join_40"></a>straight_join</h2>
 <p>straight_join其实不是什么特别join，他会干扰mysql对表的连接顺序。强制join前的表作为驱动表（外循环）</p>
-<h2><a id="join_43"></a>关于join我还想说</h2>
-<p>join本身其实就是一个双重循环。虽然mysql加入了nka、mrr、icp等。但其实并不能完全解决性能问题，特别是io的坑。建议不要在生产上使用join，尽量简化查询。<strong>根据简单的key来查不怕查多次，就怕慢查询。</strong></p>
+<h2><a id="_43"></a>…</h2>
+<p>虽然mysql加入了nka、mrr、icp等。但其实并不能完全解决性能问题，特别是io的坑。建议不要在生产上使用join，尽量简化查询。<strong>根据简单的key来查不怕查多次，就怕慢查询。</strong></p>
 <p>另外，随着业务的发展后续要想拆库，需要把原来用join方式联合查询的表分到两个不同的库，那就改动大了。随着微服务的兴起，这是很常见的事。</p>
