@@ -89,14 +89,14 @@
                 });
                 
                 $("#get-md-btn").bind('click', function(){
-                    console.log(testEditor.getMarkdown());
-                    alert('打开console复制')
+                    $('#html_div').text(testEditor.getMarkdown());
+                    // alert('打开console复制')
                 });
                 
                 $("#get-html-btn").bind('click', function() {
-                    console.log(testEditor.getHTML());
+                    // console.log(testEditor.getHTML());
                     // alert('打开console复制')
-                    $('#html_div').html(testEditor.getHTML())
+                    $('#html_div').text(testEditor.getHTML())
                 });                
                 
                 $("#watch-btn").bind('click', function() {
@@ -135,7 +135,7 @@
                 });
             });
         </script>
-        <pre id='html_div'>
-        </pre>
+        <textarea id='html_div'>
+        </textarea>
     </body>
 </html>
