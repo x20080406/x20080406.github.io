@@ -63,7 +63,7 @@ disqushandler: 'shuaia'
 
 
 #https://github.com/imsun/gitment#options
-gitOwner: 'x20080406'
+gitOwner: 'x20080406@gmail.com'
 gitRepo: 'x20080406.github.io'
 gitClientId: 'd9a2892df3e02837087e'
 gitClientSecret: '6e07f2bfd30d24c76706ae9ec7166946af2c4af6'
