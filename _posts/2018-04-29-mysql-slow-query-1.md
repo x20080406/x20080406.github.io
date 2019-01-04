@@ -108,7 +108,7 @@ ext.value_l_varchar <span class="hljs-keyword">as</span> attrValueLVarchar, ext.
 </tr>
 </tbody>
 </table>
-<p>dba给的解释是：这个时候可能在计算统计信息，导致优化器在这一刻看到的统计信息是错误的，导致优化器认为此索引过滤性不好，就转用小表作为驱动表来join，悲剧就此发生。通过上述表格可以看到cardinality已经去到7344，实际只有9左右。</p>
+<p>dba给的解释是：这个时候可能在计算统计信息，导致优化器在这一刻看到的统计信息是错误的，导致优化器认为此索引过滤性不好，就转用小表作为驱动表来join，悲剧就此发生。通过上述表格可以看到扫描行数已经去到7344，实际只有9左右。</p>
 <p>join的本质可以粗略理解为两个循环嵌套。外循环称作<strong>驱动表</strong>。此处可以理解为，将小表作为外循环，根据<strong><a href="http://attr.id">attr.id</a></strong>与大表进行关联。意思就是要把大表这几十亿数据轮几十遍。我的个乖乖，没挂就算幸运了。</p>
 <h1><a id="_33"></a>破解</h1>
 <p>将<em>inner join</em>改为<em>stiraight_join</em>可避免此问题。让大表作为驱动表，强制其使用m_id列的索引（扫出来的结果集很小），然后对小表进行join。</p>
